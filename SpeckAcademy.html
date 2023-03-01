@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+	<title>Speck Academy 2023</title>
+	<link rel="stylesheet" type="text/css" href="SpeckAcademy.css">
+	</head>
+	
+	<body>
+		<h1>My technologies</h1>
+		<section>
+		
+		<label for="inputField"></label>
+		<input type="text" id="inputField">
+		<button id="addButton">Add</button> 
+		<button id="removeButton">Remove all items</button>
+		<div id="container"></div>
+		
+		<script>
+		var addButton = document.getElementById("addButton");
+		var removeButton = document.getElementById("removeButton");
+		var container = document.getElementById("container");
+		var elements = [];
+		
+		addButton.addEventListener("click", function() {
+			var inputField = document.getElementById("inputField")
+			var value = inputField.value;		
+			var newElement = document.createElement("div");
+			newElement.classList.add("item");
+			newElement.innerText = value;
+			container.appendChild(newElement);
+			elements.push(newElement);
+		});
+		
+		removeButton.addEventListener("click", function(){
+			for (var i = 0; i < elements.length; i++) {
+				container.removeChild(elements[i]);
+			}
+			elements = [];
+		});
+		</script>
+
+		
+		</section>
+	</body>
+	
+</html>
+
+
+	
